@@ -1,6 +1,6 @@
 {
     "name": "projectName",
-    "description": "nodejs v0.12.6, npm v2.11.2",
+    "description": "DE: nodejs v0.12.6 & npm v2.11.2",
     "version": "1.0.0",
     "author": "jsoon",
     "devDependencies": {
