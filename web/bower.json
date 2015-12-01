@@ -1,0 +1,21 @@
+{
+    "name": "projectName",
+    "description": "",
+    "version": "1.0.0",
+    "authors": [
+        "jsoon"
+    ],
+    "license": "jsoon",
+    "private": true,
+    "dependencies": {
+        "jquery": "~1",
+        "bootstrap": "~3"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
