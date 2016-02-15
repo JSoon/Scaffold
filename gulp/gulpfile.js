@@ -9,11 +9,7 @@ var less = require('gulp-less');
 var rename = require("gulp-rename");
 
 // Default
-gulp.task('default', [
-    'less',
-    'CSS',
-    'JS'
-]);
+gulp.task('default', ['watch']);
 
 // Compile less files
 gulp.task('less', function () {
@@ -59,4 +55,11 @@ gulp.task('JS', function () {
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist'));
+});
+
+// Watch
+gulp.task('watch', ['less', 'CSS', 'JS'], function () {
+    var files = ['app/**/*'];
+
+    gulp.watch(files, ['less', 'CSS', 'JS']);
 });
