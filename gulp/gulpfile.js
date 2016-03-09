@@ -6,7 +6,16 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var less = require('gulp-less');
-var rename = require("gulp-rename");
+var strip = require('gulp-strip-comments');
+var rename = require('gulp-rename');
+var header = require('gulp-header');
+var package = require('./package.json');
+var banner = ['/**',
+  ' * <%= pkg.name %> v<%= pkg.version %>',
+  ' * Copyright <%= new Date().getFullYear() %> <%= pkg.author%>',
+  ' * Licensed under the <%= pkg.license %> license',
+  ' */',
+  ''].join('\n');
 
 // Default
 gulp.task('default', ['watch']);
@@ -49,11 +58,18 @@ gulp.task('JS', function () {
         .pipe(concat('scripts.js', {
             newLine: ';'
         }))
-        .pipe(rename('scripts.min.js'))
+        .pipe(strip())
+        .pipe(header(banner, {
+            pkg: package
+        }))
         .pipe(gulp.dest('dist'))
+        .pipe(rename('scripts.min.js'))
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
+        .pipe(header(banner, {
+            pkg: package
+        }))
         .pipe(gulp.dest('dist'));
 });
 

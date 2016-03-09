@@ -5,7 +5,7 @@
 ##############################################
 
 # git
-#.gitignore
+.gitignore
 
 # npm
 node_modules
@@ -14,9 +14,9 @@ npm-debug.log
 # bower
 bower_components
 
-# Grunt
-
 # Gulp
 
 # test 测试文件
 #test
+
+dist
