@@ -1,9 +1,14 @@
 {
     "name": "projectName",
-    "description": "DE: node v4.3.0",
+    "description": "descriptions",
     "version": "1.0.0",
+    "authors": [
+        "jsoon: serdeemail@gmail.com"
+    ],
     "license": "MIT",
-    "author": "jsoon",
+    "engines": {
+        "node": ">=4.3.0"
+    },
     "devDependencies": {
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^3.1.0",
