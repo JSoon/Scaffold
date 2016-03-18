@@ -11,6 +11,7 @@ var less = require('gulp-less');
 var stripjs = require('gulp-strip-comments');
 var stripcss = require('gulp-strip-css-comments');
 var rename = require('gulp-rename');
+var clean = require('gulp-clean');
 var header = require('gulp-header');
 var package = require('./package.json');
 var banner = ['/**',
